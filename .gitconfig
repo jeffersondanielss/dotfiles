@@ -1,27 +1,27 @@
 [user]
-	name = Jefferson Daniel
-	email = jeffersondanielss@gmail.com
+  name = Jefferson Daniel
+  email = jeffersondanielss@gmail.com
 
 [alias]
-	# show files status
-	s = status
+  # show files status
+  s = status
 
-	#clean changes
-	clean = checkout .
+  #clean changes
+  clean = checkout .
 
-	# list oneline logs 
-	l = log --pretty=o
+  # list oneline logs 
+  l = log --pretty=o
 
-	# List aliases
-	aliases = config --get-regexp alias
+  # List aliases
+  aliases = config --get-regexp alias
 
-	# Show verbose output about tags, branches or remotes
-	tags = tag -l
-	branches = branch -a
-	remotes = remote -v
+  # Show verbose output about tags, branches or remotes
+  tags = tag -l
+  branches = branch -a
+  remotes = remote -v
 
-	# Switch to a branch, creating it if necessary
-	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+  # Switch to a branch, creating it if necessary
+  go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
-	# Amend the currently staged files to the latest commit
-	amend = commit --amend --reuse-message=HEAD
+  # Amend the currently staged files to the latest commit
+  amend = commit --amend --reuse-message=HEAD

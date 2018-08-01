@@ -50,6 +50,20 @@ prompt_git() {
   fi;
 }
 
+node_version(){
+  if [[ -f .nvmrc || -f package.json || -d node_modules ]]; then
+    local node="$(nvm current)";
+    echo -e " ${1}⬢ ${node}";
+  fi
+}
+
+docker_version(){
+  if [[ -f Dockerfile || -f docker-compose.yml ]]; then
+    local docker="$(docker version -f '{{.Server.Version}}' 2>/dev/null)";
+    echo -e " 🐳  ${1}${docker}";
+  fi
+}
+
 if tput setaf 1 &> /dev/null; then
   tput sgr0; # reset colors
   bold=$(tput bold);
@@ -80,12 +94,15 @@ else
   yellow="\e[1;33m";
 fi;
 
-PS1="🔥  "
-PS1+="\[${orange}\]\u " # User
+PS1="\[${orange}\]\u " # User
 PS1+="\[${white}\]at "
 PS1+="\[${yellow}\]\h " # Host
 PS1+="\[${white}\]in "
 PS1+="\[${green}\]\W " # Directory
-PS1+="\$(prompt_git \"\[${white}\]on \[${violet}\]\" \"\[${blue}\]\") "; # Git repository details
+PS1+="\$(prompt_git \"\[${white}\]on \[${violet}\]\" \"\[${blue}\]\")" # Git repository details
+PS1+="\$(node_version \"\[${white}\]via \[${green}\]\")"
+PS1+="\$(docker_version \"\[${blue}\]\")"
+PS1+="\n"
+PS1+="\[${white}\]λ "
 PS1+="\[${reset}\]" # Reset colors
 export PS1;

@@ -1,0 +1,24 @@
+{
+  "name": "dotfiles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-commit": "semantic-commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffersondanielss/dotfiles.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeffersondanielss/dotfiles/issues"
+  },
+  "homepage": "https://github.com/jeffersondanielss/dotfiles#readme",
+  "dependencies": {
+    "semantic-commit": "^0.2.1"
+  }
+}
